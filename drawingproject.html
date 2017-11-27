@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+    <script>
+    var r 
+    var g
+    var b
+    
+        function setup() {
+            createCanvas(600,600);
+            r=0
+            g=0
+            b=0
+        }
+
+        function draw() {
+   
+            
+           
+            //represent the different colors to choose from
+           
+            fill(255,0,0)
+            rect(480,480,100,100)
+            fill(0,255,0)
+            rect(340,480,100,100)
+            fill(0,0,255)
+           rect(200,480,100,100)
+            fill(252, 240, 22)
+            rect(67,480,100,100)
+        //     ellipse(mouseX,mouseY,20,20)
+        }
+        function mouseClicked(){
+            //if you click the red box
+          if(mouseX>480 && mouseX<580 && mouseY>480 && mouseY<580){
+              //the red will appear as the color you can use to draw with
+              r=255
+              g=0
+              b=0
+              //if you click the green box
+          }else if(mouseX>340 && mouseX < 440 && mouseY>480 && mouseY <580){
+              //the green will appear as the color you can use to draw with
+            r=0
+            g=255
+            b=0
+            //if you click the blue box
+        }else if(mouseX>200 && mouseX<300 && mouseY> 480 && mouseY<580){
+            //the blue color will appear as the colore you can use to draw with
+            r= 0
+            g= 0
+            b= 255
+            //if you click the yellow box
+        }else if (mouseX>67&&mouseX<167&& mouseY>480&&mouseY<580){
+            //the yellow color will apeear as the color you can use to draw with
+            r=252
+            g=240
+            b= 22
+          fill(r,g,b)
+          ellipse(mouseX,mouseY,20,20)
+        }
+        }
+        
+       
+         function mouseDragged(){
+             //when u click and hold mouse the paint will come out 
+             stroke(r,g,b)
+              fill(r,g,b)
+              ellipse(mouseX,mouseY,20,20)
+         }
+         function keyPressed(){
+             //if you click the letter j your painting will erase and you can start over
+             if(keyCode==75){
+                 background(255)
+            
+             }
+         }
+         
+         /*PSEUDOCODE:there are 4 boxes on the bottom of the canvas, each box represent the color you
+         can use to draw with.If you click the box your color that you chose will appear but,if you 
+         click outside the box the previous color you chose will still be there.To start over all you
+         have to do is click the letter j and your canvas will go blank allowing you to start over.*/
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
